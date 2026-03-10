@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+*.swp
+*~
+
+# Logs (falls jemand welche in den Repo-Ordner legt)
+*.log
+
+# Persönliche / lokale Kopien (optional)
+# local.conf

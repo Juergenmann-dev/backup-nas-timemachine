@@ -1,0 +1,14 @@
+# Sparsebundle manuell erzeugen (einmalig)
+
+Wenn Sie das Sparsebundle ohne das Skript sparsebundle_erstellen.sh anlegen wollen:
+
+1. NAS-Freigabe verbinden (z. B. im Finder oder zuerst mount_timemachine.sh so anpassen, dass nur die Freigabe gemountet wird).
+2. In einem Terminal (Ersetzen Sie PFAD_ZUM_NAS_ORDNER und optional 500g):
+
+   hdiutil create -size 500g -type SPARSEBUNDLE -fs HFS+J -volname "Time Machine" -layout SPUD -ov "PFAD_ZUM_NAS_ORDNER/TimeMachine.sparsebundle"
+
+   Beispiel (wenn Freigabe unter /Volumes/TimeMachineBackup gemountet ist):
+
+   hdiutil create -size 500g -type SPARSEBUNDLE -fs HFS+J -volname "Time Machine" -layout SPUD -ov "/Volumes/TimeMachineBackup/TimeMachine.sparsebundle"
+
+3. Danach in mount_timemachine.sh NAS_SERVER, NAS_SHARE, NAS_SUBFOLDER und SPARSEBUNDLE_NAME so setzen, dass sie auf diese Datei zeigen.
